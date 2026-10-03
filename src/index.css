@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0E1013;
+  --color-charcoal: #181B20;
+  --color-bone: #F4EFE6;
+  --color-medina: #1F5FA8;
+  --color-medina-hover: #184c87;
+  --color-terracotta: #C65D3B;
+  --color-terracotta-hover: #ad4f30;
+  --color-brass: #C9A24B;
+  --color-brass-glow: #e0bb66;
+  --color-mist: #8E96A3;
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-arabic: 'Cairo', system-ui, sans-serif;
+}
+
+:root {
+  --ink: #0E1013;
+  --charcoal: #181B20;
+  --bone: #F4EFE6;
+  --medina: #1F5FA8;
+  --terracotta: #C65D3B;
+  --brass: #C9A24B;
+  --mist: #8E96A3;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0E1013;
+  color: #F4EFE6;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #0E1013;
+  color: #F4EFE6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings font settings */
+.font-fraunces {
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+}
+
+[dir="rtl"] .font-fraunces,
+[dir="rtl"] body {
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+
+/* Hero and section headings clamp sizes */
+.hero-h1 {
+  font-size: clamp(2.6rem, 7.5vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.section-h2 {
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+/* Medina arch silhouette: classic Moorish arched portal */
+.medina-arch {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* 8-point geometric medina star pattern */
+.bg-medina-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A24B' fill-opacity='0.05' fill-rule='evenodd'%3E%3Cpath d='M30 18l3.5 8.5L42 30l-8.5 3.5L30 42l-3.5-8.5L18 30l8.5-3.5z M30 0l2 6.5L38.5 8.5 32 10.5 30 17l-2-6.5L21.5 8.5 28 6.5z M0 30l6.5 2L8.5 38.5 10.5 32 17 30l-6.5-2L8.5 21.5 6.5 28z M60 30l-6.5 2L51.5 38.5 49.5 32 43 30l6.5-2L51.5 21.5 53.5 28z M30 60l2-6.5L38.5 51.5 32 49.5 30 43l-2 6.5L21.5 51.5 28 53.5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Subtle CSS film grain overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Thin border utility */
+.border-subtle {
+  border-color: rgba(142, 150, 163, 0.22);
+}
+
+/* Custom interactive button slide effect */
+.btn-slide {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+}
+.btn-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  transition: transform 0.25s ease;
+  pointer-events: none;
+}
+.btn-slide:hover::before {
+  transform: translateX(100%);
+}
+.btn-slide:active {
+  transform: scale(0.98);
+}
+
+/* Focus outline for accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #F4EFE6;
+  outline-offset: 3px;
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hair-style-by-oussama.com/sitemap.xml

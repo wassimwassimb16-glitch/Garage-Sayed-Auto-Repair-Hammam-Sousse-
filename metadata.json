@@ -1,0 +1,6 @@
+{
+  "name": "Hair Style By Oussama",
+  "description": "Premium bilingual website for Hair Style By Oussama, men's barber shop in Sousse medina with 3D barber pole and instant booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
